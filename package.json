@@ -1,0 +1,22 @@
+{
+  "name": "todomvc-tests",
+  "version": "1.0.0",
+  "description": "TodoMVC tests with TestCafe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafamuvi/todomvc-tests.git"
+  },
+  "keywords": [
+    "TestCafe"
+  ],
+  "author": "Rafael Muniz Vieira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafamuvi/todomvc-tests/issues"
+  },
+  "homepage": "https://github.com/rafamuvi/todomvc-tests#readme"
+}
