@@ -21,39 +21,59 @@ class TodoPage {
 
         this.clearCompleted = Selector('button.clear-completed');
 
+        this.listLength = Selector(() => {
+            return document.querySelectorAll('ul.todo-list li');
+        });
+
     }
 
-    async newTodo() {
-        randomNum = Math.floor(Math.random() * 100);
-        await t
-            .click(this.inputTodo)
-            .typeText('Todo ' + randomNum)
-            .pressKey('enter');
-    };
-
-    getRandomInt(x) {
+    // Generates random number
+    async getRandomInt(x) {
         return Math.floor(Math.random() * x);
     };
 
-    getRandomItemIndex(x) {
-        max = document.querySelectorAll('ul.todo-list li').length;
-        if(max == 0) {
+    // Gets a random number    
+    async getRandomItemIndex() {
+        max = this.listLength.count;
+        if (max == 0) {
             return 0;
         };
         x = this.getRandomInt(max) + 1;
         return x;
     };
 
+    // Get qtd of itens in todo-list
+    async getQtdItens() {
+        await t
+            return Selector('ul.todo-list li').length;
+    }
+
+    // Create new todo
+    async newTodo() {
+        await t
+            .click(this.inputTodo)
+            .typeText(this.inputTodo, 'Todo ' + await this.getRandomInt(1000))
+            .pressKey('enter');
+    };
+
+    // Amend an existing todo
     async amendTodo(x) {
-        randomNum = Math.floor(Math.random() * 100);
-        if(x > 0) {
+        if (x > 0) {
             await t
                 .doubleClick('ul.todo-list li:nth-child(' + x + ')')
                 .pressKey('ctrl+a')
-                .typeText('Amend ' + randomNum)
+                .typeText('Amend ' + await this.getRandomInt(1000))
                 .pressKey('enter');
         };
     };
+
+    // Create how many todos you want
+    async createTodos(x) {
+        for (var i = 0; i < x; i++) {
+            await this.newTodo();
+        };
+    };
+
 
 }
 
