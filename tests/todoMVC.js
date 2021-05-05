@@ -17,7 +17,7 @@ test('Create 10 todos', async t => {
 
 });
 
-test.only('Create 10 todos and delete one by one', async t => {
+test('Create 10 todos and delete one by one', async t => {
 
     await todopage.createTodos(10);
     await t
@@ -29,6 +29,16 @@ test.only('Create 10 todos and delete one by one', async t => {
         };
         await t
             .expect(todopage.listLength.count).eql(0);
-        
+
+});
+
+test('Create 10 todos and amend then', async t => {
+
+    await todopage.createTodos(10);
+    await t
+        .expect(todopage.listLength.count).eql(10)
+        for(var i = 10; i > 0; i--){
+            await todopage.amendTodo(i);
+        };
 
 });

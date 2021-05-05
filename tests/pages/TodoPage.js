@@ -19,9 +19,9 @@ class TodoPage {
             return document.querySelector('ul.todo-list > li:nth-child(' + x + ') button.destroy');
         });
 
-        this.filter = function (x) {
-            Selector('ul.filters > li:nth-child(' + x + ')');
-        };
+        this.filter = Selector((x) => {
+            return document.querySelector('ul.filters > li:nth-child(' + x + ')');
+        });
 
         this.clearCompleted = Selector('button.clear-completed');
         
@@ -59,9 +59,9 @@ class TodoPage {
     async amendTodo(x) {
         if (x > 0) {
             await t
-                .doubleClick('ul.todo-list li:nth-child(' + x + ')')
+                .doubleClick(this.item(x))
                 .pressKey('ctrl+a')
-                .typeText('Amend ' + await this.getRandomInt(1000))
+                .typeText(this.item(x), 'Amend ' + await this.getRandomInt(1000))
                 .pressKey('enter');
         };
     };
