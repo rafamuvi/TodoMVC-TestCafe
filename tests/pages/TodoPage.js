@@ -7,13 +7,17 @@ class TodoPage {
 
         this.toggleAll = Selector('#toggle-all');
 
-        this.selectItem = function (x) {
-            Selector('ul.todo-list > li:nth-child(' + x + ') input.toggle');
-        };
+        this.item = Selector((x) => {
+            return document.querySelector('ul.todo-list > li:nth-child(' + x + ')');
+        });
 
-        this.deleteItem = function (x) {
-            Selector('ul.todo-list > li:nth-child(' + x + ') button.destroy');
-        };
+        this.selectItem = Selector((x) => {
+            return document.querySelector('ul.todo-list > li:nth-child(' + x + ') input.toggle');
+        });
+
+        this.deleteItem = Selector((x) => {
+            return document.querySelector('ul.todo-list > li:nth-child(' + x + ') button.destroy');
+        });
 
         this.filter = function (x) {
             Selector('ul.filters > li:nth-child(' + x + ')');

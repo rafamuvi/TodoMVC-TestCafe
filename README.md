@@ -6,4 +6,4 @@
 
 * If you want to change some test config, open the ".testcaferc.json" file and then change it.
 
-* To change the test speed, open the sabe file, then go to speed parameter and put it between 0.01 - 1 
+* To change the test speed, open the same file, then go to "speed" parameter and put it between "0.01" - "1" 
