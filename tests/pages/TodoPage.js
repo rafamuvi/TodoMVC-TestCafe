@@ -20,7 +20,8 @@ class TodoPage {
         };
 
         this.clearCompleted = Selector('button.clear-completed');
-
+        
+        // You need to use .count when you summon it
         this.listLength = Selector(() => {
             return document.querySelectorAll('ul.todo-list li');
         });
@@ -41,12 +42,6 @@ class TodoPage {
         x = this.getRandomInt(max) + 1;
         return x;
     };
-
-    // Get qtd of itens in todo-list
-    async getQtdItens() {
-        await t
-            return Selector('ul.todo-list li').length;
-    }
 
     // Create new todo
     async newTodo() {

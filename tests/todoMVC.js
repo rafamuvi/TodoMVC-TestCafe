@@ -6,12 +6,13 @@ fixture("Todo MVC Fixture")
 
 test("Create Todo Test", async t => {
     await t
-        await todopage.newTodo();
+    await todopage.newTodo();
 });
 
 test('Create 10 todos', async t => {
+
+    await todopage.createTodos(10);
     await t
-        await todopage.createTodos(10);
-        await t
-            .expect(todopage.listLength.count).eql(10);
+        .expect(todopage.listLength.count).eql(10);
+
 });
