@@ -8,19 +8,19 @@ class TodoPage {
         this.toggleAll = Selector('#toggle-all');
 
         this.item = Selector((x) => {
-            return document.querySelector('ul.todo-list > li:nth-child(' + x + ')');
+            return document.querySelector(`ul.todo-list > li:nth-child(${x})`);
         });
 
         this.selectItem = Selector((x) => {
-            return document.querySelector('ul.todo-list > li:nth-child(' + x + ') input.toggle');
+            return document.querySelector(`ul.todo-list > li:nth-child(${x}) input.toggle`);
         });
 
         this.deleteItem = Selector((x) => {
-            return document.querySelector('ul.todo-list > li:nth-child(' + x + ') button.destroy');
+            return document.querySelector(`ul.todo-list > li:nth-child(${x}) button.destroy`);
         });
 
         this.filter = Selector((x) => {
-            return document.querySelector('ul.filters > li:nth-child(' + x + ')');
+            return document.querySelector(`ul.filters > li:nth-child(${x})`);
         });
 
         this.clearCompleted = Selector('button.clear-completed');
